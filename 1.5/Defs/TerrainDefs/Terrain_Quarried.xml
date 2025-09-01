@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<TerrainDef>
+	<TerrainDef ParentName="NaturalTerrainBase">
 		<defName>QRY_QuarriedGround</defName>
 		<label>quarried ground</label>
 		<texturePath>Cupro/Terrain/QuarriedGround</texturePath>
@@ -27,7 +27,7 @@
 		<ignoreConfigErrors>true</ignoreConfigErrors>
 	</TerrainDef>
 
-	<TerrainDef>
+	<TerrainDef ParentName="NaturalTerrainBase">
 		<defName>QRY_QuarriedGroundWall</defName>
 		<label>quarried ground</label>
 		<texturePath>Cupro/Terrain/QuarriedGround</texturePath>
@@ -45,7 +45,7 @@
 		<ignoreConfigErrors>true</ignoreConfigErrors>
 	</TerrainDef>
 
-	<TerrainDef>
+	<TerrainDef ParentName="NaturalTerrainBase">
 		<defName>QRY_ReclaimedSoil</defName>
 		<label>reclaimed soil</label>
 		<texturePath>Cupro/Terrain/ReclaimedSoil</texturePath>

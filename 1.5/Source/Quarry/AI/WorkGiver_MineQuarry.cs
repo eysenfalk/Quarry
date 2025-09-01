@@ -12,6 +12,10 @@ namespace Quarry
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_Quarry quarry = t as Building_Quarry;
+            if (quarry == null || QuarryUtility.ShouldStop(quarry))
+            {
+                return null;
+            }
             if (pawn.workSettings != null)
             {
                 if (!pawn.workSettings.WorkIsActive(QuarryDefOf.QuarryMining))

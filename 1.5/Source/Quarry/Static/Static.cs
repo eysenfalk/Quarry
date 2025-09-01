@@ -60,6 +60,7 @@ namespace Quarry
         public static string ToolTipResourceModifier = "QRY_TooltipResourceModifier".Translate();
         public static string ToolTipAllowRottable = "QRY_TooltipAllowRottable".Translate();
         public static string ToolTipPlaceAnywhere = "QRY_TooltipPlaceAnywhere".Translate();
+        public static string ToolTipStopAtPercentage = "QRY_TooltipStopAtPercent".Translate();
 
         public static string ToolTipTicksReclaimedSoilFertility = "QRY_ToolTipReclaimedSoilFertility".Translate();
         public static string ToolTipTicksAverage = "QRY_ToolTipTicksAverage".Translate();

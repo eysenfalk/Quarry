@@ -9,7 +9,29 @@ namespace Quarry {
 
 	public static class QuarryUtility {
 
-		public static Predicate<TerrainDef> IsValidQuarryTerrain = (
+        public static bool ShouldStop(Building_Quarry quarry)
+        {
+            return StopAtPercentage(quarry) >= QuarrySettings.stopAtPercent;
+        }
+
+        public static float StopAtPercentage(Building_Quarry quarry)
+        {
+            float total = 0, filled = 0;
+
+            foreach (var coord in quarry.OccupiedRect().ContractedBy(quarry.WallThickness).Cells)
+            {
+                total++;
+
+                if (quarry.Map.thingGrid.CellContains(coord, ThingCategory.Item))
+                {
+                    filled++;
+                }
+            }
+
+            return filled / total;
+        }
+
+        public static Predicate<TerrainDef> IsValidQuarryTerrain = (
 			(TerrainDef t) => (t == TerrainDefOf.Gravel ||
 			t.defName.EndsWith("_Rough") ||
 			t.defName.EndsWith("_RoughHewn") ||

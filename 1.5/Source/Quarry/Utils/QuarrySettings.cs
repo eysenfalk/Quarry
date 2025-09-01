@@ -21,6 +21,7 @@ namespace Quarry
         internal static List<ThingCountExposable> oreDictionary = null;
         internal static List<ThingDef> database;
         internal static Dictionary<string, QuarryRockType> quarryableStone;
+        internal static float stopAtPercent = 0.9f;
 
         internal static int QuarryMaxHealth
         {
@@ -40,6 +41,7 @@ namespace Quarry
         //    Log.Message($"Quarry:: QuarrySettings ExposeData({Scribe.mode})");
             base.ExposeData();
 
+            Scribe_Values.Look(ref stopAtPercent, "QRY_stopAtPercent", 0.9f);
             Scribe_Values.Look(ref letterSent, "QRY_letterSent", false);
             Scribe_Values.Look(ref placeAnywhere, "QRY_placeAnywhere", false);
             Scribe_Values.Look(ref allowRottable, "QRY_allowRottable", false);

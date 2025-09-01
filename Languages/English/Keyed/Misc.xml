@@ -14,6 +14,10 @@
 	<QRY_TooltipResourceModifier>Modifier applied to resources mined</QRY_TooltipResourceModifier>
 	<QRY_TooltipChunkChance>Chance to get a chunk. If junk is mined, this is the chance to get chunks instead of rubble.\n\nMining blocks uses chunk chance to determine whether a sufficient amount of stone was mined to make blocks</QRY_TooltipChunkChance>
 	
+	
+	<QRY_TooltipStopAtPercent>Stop pawns working in the qurry when over the percentage set.</QRY_TooltipStopAtPercent>
+	<QRY_SettingsStopAtPercent>Stop when at {0}% capacity</QRY_SettingsStopAtPercent>
+	
 	<QRY_SettingsMineTimeBase>Base Mining Ticks</QRY_SettingsMineTimeBase>
 	<QRY_SettingsMineTimeVar>Max Variance Ticks</QRY_SettingsMineTimeVar>
 	<QRY_ToolTipTicksAverage>Base time(in ticks) per mining operation</QRY_ToolTipTicksAverage>
