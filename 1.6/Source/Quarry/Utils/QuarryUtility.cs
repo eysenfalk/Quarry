@@ -9,29 +9,7 @@ namespace Quarry {
 
 	public static class QuarryUtility {
 
-        public static bool ShouldStop(Building_Quarry quarry)
-        {
-            return StopAtPercentage(quarry) >= QuarrySettings.stopAtPercent;
-        }
-
-        public static float StopAtPercentage(Building_Quarry quarry)
-        {
-            float total = 0, filled = 0;
-
-            foreach (var coord in quarry.OccupiedRect().ContractedBy(quarry.WallThickness).Cells)
-            {
-                total++;
-
-                if (quarry.Map.thingGrid.CellContains(coord, ThingCategory.Item))
-                {
-                    filled++;
-                }
-            }
-
-            return filled / total;
-        }
-
-        public static Predicate<TerrainDef> IsValidQuarryTerrain = (
+		public static Predicate<TerrainDef> IsValidQuarryTerrain = (
 			(TerrainDef t) => (t == TerrainDefOf.Gravel ||
 			t.defName.EndsWith("_Rough") ||
 			t.defName.EndsWith("_RoughHewn") ||
@@ -199,5 +177,40 @@ namespace Quarry {
 						 where (d.category == ThingCategory.Item && d.scatterableOnMapGen && !d.destroyOnDrop && !d.MadeFromStuff && (d.GetCompProperties<CompProperties_Rottable>() == null || QuarrySettings.allowRottable))
 						 select d;
 		}
-	}
+
+        public static List<QuarryRockType> RockTypesUnderArea(IntVec3 loc, Rot4 rot, IntVec2 size, Map map)
+        {
+            var rocksUnder = new List<QuarryRockType>();
+            var rockKeysAdded = new HashSet<string>();
+
+            foreach (IntVec3 c in GenAdj.CellsOccupiedBy(loc, rot, size))
+            {
+                TerrainDef td = map.terrainGrid.TerrainAt(c);
+
+                if (IsValidQuarryRock(td, out QuarryRockType rockType, out string key))
+                {
+                    if (!rocksUnder.Contains(rockType) && !rockKeysAdded.Contains(key))
+                    {
+                        rocksUnder.Add(rockType);
+                        rockKeysAdded.Add(key);
+                    }
+                }
+            }
+
+            // Fallback: if no rocks found, use map's natural rocks
+            if (rocksUnder.Count == 0)
+            {
+                foreach (var rock in QuarrySettings.quarryableStone.Values)
+                {
+                    if (Find.World.NaturalRockTypesIn(map.Tile).Contains(rock.rockDef))
+                    {
+                        rocksUnder.Add(rock);
+                    }
+                }
+            }
+
+            return rocksUnder;
+        }
+
+    }
 }

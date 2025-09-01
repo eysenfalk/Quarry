@@ -53,7 +53,7 @@ namespace Quarry
         }
 
 
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             // Set up fail conditions
             this.FailOn(delegate

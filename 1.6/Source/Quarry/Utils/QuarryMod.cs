@@ -89,8 +89,7 @@ namespace Quarry
 				listtop.CheckboxLabeled(Static.LetterSent, ref QuarrySettings.letterSent, Static.ToolTipLetter);
 				listtop.CheckboxLabeled(Static.AllowRottable, ref QuarrySettings.allowRottable, Static.ToolTipAllowRottable);
 				listtop.CheckboxLabeled(Static.PlaceAnywhere, ref QuarrySettings.placeAnywhere, Static.ToolTipPlaceAnywhere);
-                listtop.LabeledScrollbarSetting("QRY_SettingsStopAtPercent".Translate(QuarrySettings.stopAtPercent), ref QuarrySettings.stopAtPercent, Static.ToolTipStopAtPercentage);
-                listtop.TextFieldNumericLabeled("QRY_SettingsReclaimedSoilFertility".Translate(QuarrySettings.reclaimedSoilFertility), ref QuarrySettings.reclaimedSoilFertility, ref reclaimedSoilFertilityBuffer, 0f, tooltip: Static.ToolTipTicksReclaimedSoilFertility);
+				listtop.TextFieldNumericLabeled("QRY_SettingsReclaimedSoilFertility".Translate(QuarrySettings.reclaimedSoilFertility), ref QuarrySettings.reclaimedSoilFertility, ref reclaimedSoilFertilityBuffer, 0f, tooltip: Static.ToolTipTicksReclaimedSoilFertility);
 				listtop.NewColumn();
 				listtop.LabeledScrollbarSetting("QRY_SettingsJunkChance".Translate(QuarrySettings.junkChance), ref QuarrySettings.junkChance, Static.ToolTipJunkChance);
 				listtop.LabeledScrollbarSetting("QRY_SettingsChunkChance".Translate(QuarrySettings.chunkChance), ref QuarrySettings.chunkChance, Static.ToolTipChunkChance);

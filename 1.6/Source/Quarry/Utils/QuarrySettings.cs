@@ -8,7 +8,7 @@ namespace Quarry
     public class QuarrySettings : ModSettings
     {
 
-        internal static bool placeAnywhere = false;
+        internal static bool placeAnywhere = true;
         internal static bool letterSent = false;
         internal static bool allowRottable = false;
         internal static int quarryMaxHealth = 2000;
@@ -21,7 +21,6 @@ namespace Quarry
         internal static List<ThingCountExposable> oreDictionary = null;
         internal static List<ThingDef> database;
         internal static Dictionary<string, QuarryRockType> quarryableStone;
-        internal static float stopAtPercent = 0.9f;
 
         internal static int QuarryMaxHealth
         {
@@ -41,9 +40,8 @@ namespace Quarry
         //    Log.Message($"Quarry:: QuarrySettings ExposeData({Scribe.mode})");
             base.ExposeData();
 
-            Scribe_Values.Look(ref stopAtPercent, "QRY_stopAtPercent", 0.9f);
             Scribe_Values.Look(ref letterSent, "QRY_letterSent", false);
-            Scribe_Values.Look(ref placeAnywhere, "QRY_placeAnywhere", false);
+            Scribe_Values.Look(ref placeAnywhere, "QRY_placeAnywhere", true);
             Scribe_Values.Look(ref allowRottable, "QRY_allowRottable", false);
             Scribe_Values.Look(ref quarryMaxHealth, "QRY_quarryMaxHealth", 2000);
             Scribe_Values.Look(ref junkChance, "QRY_junkChance", 60);

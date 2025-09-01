@@ -5,5 +5,6 @@
 		<value>
 			<li>QuarryMining</li>
 		</value>
+		<order>Append</order>
 	</Operation>
 </Patch>

@@ -6,7 +6,8 @@ namespace Quarry {
 
 	public class Designator_ReclaimSoil : Designator {
 
-		public override bool DragDrawMeasurements => true;
+        public override DrawStyleCategoryDef DrawStyleCategory => DrawStyleCategoryDefOf.FilledRectangle;
+        public override bool DragDrawMeasurements => true;
 
 		public Designator_ReclaimSoil() {
 			defaultLabel = Static.LabelReclaimSoil;

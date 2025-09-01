@@ -17,6 +17,15 @@ namespace Quarry
         public static TerrainDef QRY_QuarriedGroundWall;
         public static TerrainDef QRY_ReclaimedSoil;
 
+        [MayRequire("Ludeon.RimWorld.Odyssey")]
+        public static TerrainDef QRY_QuarriedGroundOrbitalPlatform;
+        [MayRequire("Ludeon.RimWorld.Odyssey")]
+        public static TerrainDef QRY_QuarriedGroundWallOrbitalPlatform;
+        [MayRequire("Ludeon.RimWorld.Odyssey")]
+        public static TerrainDef QRY_QuarriedGroundMechanoidPlatform;
+        [MayRequire("Ludeon.RimWorld.Odyssey")]
+        public static TerrainDef QRY_QuarriedGroundWallMechanoidPlatform;
+
         public static JobDef QRY_MineQuarry;
 
         public static ResearchProjectDef Stonecutting;
