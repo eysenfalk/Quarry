@@ -180,7 +180,7 @@
 					<li>ComponentIndustrial</li>
 				</thingDefs>
 				<disallowedThingDefs>
-					<li MayRequire="Biotech">Wastepack</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
 				</disallowedThingDefs>
 			</filter>
 		</defaultStorageSettings>

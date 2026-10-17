@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<TerrainDef Name="QRY_QuarriedGroundBase" Abstract="True">
+		<edgeType>FadeRough</edgeType>
+		<renderPrecedence>398</renderPrecedence>
+		<pathCost>2</pathCost>
+		<statBases>
+			<Beauty>-5</Beauty>
+			<Cleanliness>-2</Cleanliness>
+		</statBases>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+			<li>SmoothableStone</li>
+		</affordances>
+		<smoothedTerrain>QRY_ReclaimedSoil</smoothedTerrain>
+		<generatedFilth>Filth_Dirt</generatedFilth>
+		<fertility>0</fertility>
+		<takeFootprints>false</takeFootprints>
+		<avoidWander>true</avoidWander>
+		<holdSnowOrSand>true</holdSnowOrSand>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+	</TerrainDef>
+	
+	<TerrainDef Name="QRY_QuarriedGroundWallBase" Abstract="True">
+		<renderPrecedence>399</renderPrecedence>
+		<pathCost>70</pathCost>
+		<statBases>
+			<Beauty>-5</Beauty>
+			<Cleanliness>-2</Cleanliness>
+		</statBases>
+		<generatedFilth>Filth_Dirt</generatedFilth>
+		<fertility>0</fertility>
+		<takeFootprints>false</takeFootprints>
+		<avoidWander>true</avoidWander>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+	</TerrainDef>
+
+	<TerrainDef ParentName="QRY_QuarriedGroundBase">
+		<label>quarried ground</label>
+		<defName>QRY_QuarriedGround</defName>
+		<texturePath>Cupro/Terrain/QuarriedGround</texturePath>
+	</TerrainDef>
+
+	<TerrainDef ParentName="QRY_QuarriedGroundBase" MayRequire="Ludeon.RimWorld.Odyssey">
+		<label>quarried ground</label>
+		<defName>QRY_QuarriedGroundOrbitalPlatform</defName>
+		<texturePath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatform</texturePath>
+	</TerrainDef>
+
+	<TerrainDef ParentName="QRY_QuarriedGroundBase" MayRequire="Ludeon.RimWorld.Odyssey">
+		<label>quarried ground</label>
+		<defName>QRY_QuarriedGroundMechanoidPlatform</defName>
+    	<texturePath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatform</texturePath>
+	</TerrainDef>
+
+	<TerrainDef ParentName="QRY_QuarriedGroundWallBase">
+		<label>quarried ground</label>
+		<defName>QRY_QuarriedGroundWall</defName>
+		<edgeType>FadeRough</edgeType>
+		<texturePath>Cupro/Terrain/QuarriedGround</texturePath>
+	</TerrainDef>
+
+	<TerrainDef ParentName="QRY_QuarriedGroundWallBase" MayRequire="Ludeon.RimWorld.Odyssey">
+		<label>quarried ground</label>
+		<defName>QRY_QuarriedGroundWallOrbitalPlatform</defName>
+		<edgeType>FadeRough</edgeType>
+		<texturePath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatform</texturePath>
+		<spaceEdgeGraphicData Inherit="False">
+			<OShapeTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_OShape</OShapeTexPath>
+			<UShapeTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_UShape</UShapeTexPath>
+			<CornerInnerTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_CornerInner</CornerInnerTexPath>
+			<CornerOuterTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_CornerOuter</CornerOuterTexPath>
+			<FlatTexPath>Terrain/Surfaces/OrbitalPlatform/BorderInside/OrbitalPlatformBorderInside_Flat</FlatTexPath>
+
+			<LoopLeftTexPath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatformEdge_Left</LoopLeftTexPath>
+			<LoopRightTexPath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatformEdge_Right</LoopRightTexPath>
+			<LoopSingleTexPath>Terrain/Surfaces/OrbitalPlatform/OrbitalPlatformEdge_Single</LoopSingleTexPath>
+
+			<LoopTexPaths>
+				<li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop1</li>
+				<li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop2</li>
+				<li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop3</li>
+				<li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop4</li>
+				<li>Terrain/Surfaces/OrbitalPlatform/Loop/OrbitalPlatformEdge_Loop5</li>
+			</LoopTexPaths>
+		</spaceEdgeGraphicData>
+	</TerrainDef>
+
+	<TerrainDef ParentName="QRY_QuarriedGroundWallBase" MayRequire="Ludeon.RimWorld.Odyssey">
+		<label>quarried ground</label>
+		<defName>QRY_QuarriedGroundWallMechanoidPlatform</defName>
+    	<texturePath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatform</texturePath>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+		<spaceEdgeGraphicData Inherit="False">
+			<OShapeTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_OShape</OShapeTexPath>
+			<UShapeTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_UShape</UShapeTexPath>
+			<CornerInnerTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_CornerInner</CornerInnerTexPath>
+			<CornerOuterTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_CornerOuter</CornerOuterTexPath>
+			<FlatTexPath>Terrain/Surfaces/MechanoidPlatform/BorderInside/MechanoidPlatformBorderInside_Flat</FlatTexPath>
+
+			<LoopLeftTexPath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatformEdge_Left</LoopLeftTexPath>
+			<LoopRightTexPath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatformEdge_Right</LoopRightTexPath>
+			<LoopSingleTexPath>Terrain/Surfaces/MechanoidPlatform/MechanoidPlatformEdge_Single</LoopSingleTexPath>
+
+			<LoopTexPaths>
+				<li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop1</li>
+				<li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop2</li>
+				<li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop3</li>
+				<li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop4</li>
+				<li>Terrain/Surfaces/MechanoidPlatform/Loop/MechanoidPlatformEdge_Loop5</li>
+			</LoopTexPaths>
+		</spaceEdgeGraphicData>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>QRY_ReclaimedSoil</defName>
+		<label>reclaimed soil</label>
+		<texturePath>Cupro/Terrain/ReclaimedSoil</texturePath>
+		<edgeType>FadeRough</edgeType>
+		<renderPrecedence>359</renderPrecedence>
+		<pathCost>2</pathCost>
+		<statBases>
+			<Beauty>-3</Beauty>
+			<BeautyOutdoors>0</BeautyOutdoors>
+			<Cleanliness>-3</Cleanliness>
+		</statBases>
+		<scatterType>Rocky</scatterType>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+			<li>GrowSoil</li>
+			<li>Diggable</li>
+		</affordances>
+		<generatedFilth>Filth_Dirt</generatedFilth>
+		<fertility>0.25</fertility>
+		<takeFootprints>True</takeFootprints>
+		<tools>
+		  <li>
+			<label>dirt</label>
+			<capacities>
+			  <li>KickMaterialInEyes</li>
+			</capacities>
+			<hediff>DirtInEyes</hediff>
+			<cooldownTime>1.5</cooldownTime>
+		  </li>
+		</tools>
+		<tags>
+		  <li>Soil</li>
+		</tags>
+		<ignoreConfigErrors>true</ignoreConfigErrors>
+	</TerrainDef>
+
+</Defs>
